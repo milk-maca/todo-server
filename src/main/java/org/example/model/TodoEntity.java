@@ -18,8 +18,8 @@ public class TodoEntity {
     @Column(nullable = false)
     private String title;
 
-    @Column(name = "todoOder",nullable = false)
-    private long order;
+    @Column(name = "todoOrder",nullable = false)
+    private Long order;
 
     @Column(nullable = false)
     private Boolean completed;

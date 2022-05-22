@@ -12,7 +12,7 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.util.List;0
+import java.util.List;
 import java.util.stream.Collectors;
 
 @CrossOrigin //CORS 이슈를 막기위해
@@ -23,12 +23,10 @@ public class TodoController {
     private final TodoService todoService;
 
     @PostMapping // post방식으로 Response를 응답으로 내려주는 create
-    public ResponseEntity<TodoResponse> create(@RequestBody TodoRequest todoRequest){
+    public ResponseEntity<TodoResponse> create(@RequestBody TodoRequest todoRequest) {
         System.out.println("CREATE");
-
         //타이틀이 없으면 정상적인 요청이아님
         if (ObjectUtils.isEmpty(todoRequest.getTitle()))
-
             return ResponseEntity.badRequest().build();
         // 나머지는 default 값
         if (ObjectUtils.isEmpty(todoRequest.getOrder()))
